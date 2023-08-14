@@ -1,5 +1,13 @@
+import { Header } from 'src/components/Header'
+import { Main } from 'src/components/Main'
+import { Footer } from 'src/components/Footer'
+
 export const App = () => {
   return (
-    <h1>Movies Explorer</h1>
+    <>
+      <Header isMain />
+      <Main />
+      <Footer />
+    </>
   )
 }

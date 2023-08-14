@@ -1,0 +1,106 @@
+.aboutProject {
+  background: #FAFAFA;
+}
+
+.aboutProjectInfo {
+  display: flex;
+  gap: 5%;
+  margin-top: 70px;
+}
+
+.aboutProjectInfoCard {
+  width: 45%;
+}
+
+.aboutProjectInfoCardTitle {
+  color: #000;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.8px;
+  margin: 0;
+}
+
+.aboutProjectInfoCardText {
+  color: #000;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.aboutProjectPath {
+  display: flex;
+  padding-top: 110px;
+}
+
+.aboutProjectPathStep {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutProjectPathStep:first-child {
+  width: 20%;
+}
+
+.aboutProjectPathStep:last-child {
+  width: 80%;
+}
+
+.aboutProjectPathStepTime, .aboutProjectPathName {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutProjectPathStepTime {
+  height: 36px;
+  font-size: 14px;
+}
+
+.aboutProjectPathName {
+  color: #A0A0A0;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  height: 45px;
+}
+
+.aboutProjectPathStep:first-child .aboutProjectPathStepTime {
+  background-color: #3456F3;
+  color: #fff;
+}
+
+.aboutProjectPathStep:last-child .aboutProjectPathStepTime {
+  background-color: #F2F2F2;
+}
+
+@media (max-width: 1280px) {
+  .aboutProjectPath {
+    padding-top: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutProjectInfo {
+    flex-direction: column;
+    gap: 56px;
+    margin-top: 60px;
+  }
+
+  .aboutProjectInfoCard {
+    width: 100%;
+  }
+
+  .aboutProjectPath {
+    padding-top: 60px;
+  }
+
+  .aboutProjectPathStepTime,
+  .aboutProjectPathName {
+    font-size: 11px;
+  }
+}

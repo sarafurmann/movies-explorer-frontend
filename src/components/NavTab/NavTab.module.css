@@ -1,0 +1,21 @@
+.navTab {
+  padding: 24px 0;
+  background: #F5F5F5;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.navLink {
+  color: #000;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  text-decoration-line: underline;
+}
+
+@media (max-width: 768px) {
+  .navTab {
+    gap: 24px;
+  }
+}
