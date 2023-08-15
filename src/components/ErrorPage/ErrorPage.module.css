@@ -1,0 +1,36 @@
+.erorr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+}
+
+.erorrStatus {
+  font-size: 140px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.errorText {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  margin-bottom: 184px;
+}
+
+.erorrBack {
+  color: #3456F3;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .errorText {
+    margin-bottom: 284px;
+  }
+}

@@ -1,0 +1,85 @@
+.signinPage {
+  background-color: #FAFAFA;
+  height: 100vh;
+  padding: 70px 0;
+  box-sizing: border-box;
+}
+
+.signinPageContainer {
+  margin: 0 auto;
+  width: fit-content;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.signinPageLogo {
+  margin-bottom: 40px;
+  width: 38px;
+  height: 38px;
+}
+
+.signinPageTitle {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+
+.signinPageInput {
+  width: 396px;
+}
+
+.signinPageInput {
+  margin-bottom: 24px;
+}
+
+.signinPageInput:last-of-type {
+  margin-bottom: 221px;
+}
+
+.signinPageExtra {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.signinPageExtraText {
+  color: #A0A0A0;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  margin-right: 6px;
+}
+
+.signinPageExtraLink {
+  color: #3456F3;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+
+@media (max-width: 1280px) {
+  .signinPageInput:last-of-type {
+    margin-bottom: 134px;
+  }
+}
+
+@media (max-width: 768px) {
+  .signinPageInput:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .signinPageButton {
+    margin-top: auto;
+  }
+
+  .signinPageExtraText {
+    font-size: 12px;
+  }
+
+  .signinPageExtraLink {
+    font-size: 12px;
+  }
+}
