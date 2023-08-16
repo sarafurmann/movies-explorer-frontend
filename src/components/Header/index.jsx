@@ -9,14 +9,18 @@ export const Header = ({ isMain }) => {
   if (isMain) {
     return (
       <header className={clsx(styles.header, styles.headerMain)}>
-        <img src={logo} alt="Logo" />
+        <a href="/">
+          <img src={logo} alt="Logo" />
+        </a>
         <a
           href="/signup"
           className={clsx(styles.headerSignUp, styles.headerNavLink)}
         >
           Регистрация
         </a>
-        <button className={styles.headerSignIn}>Войти</button>
+        <a href="/signin" className={styles.headerSignIn}>
+          Войти
+        </a>
       </header>
     )
   }

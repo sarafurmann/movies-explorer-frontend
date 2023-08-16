@@ -67,6 +67,14 @@
 }
 
 @media (max-width: 768px) {
+  .signinPageContainer {
+    align-items: center;
+  }
+
+  .signinPageInput {
+    width: 260px;
+  }
+
   .signinPageInput:last-of-type {
     margin-bottom: 0;
   }

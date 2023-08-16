@@ -45,6 +45,20 @@
   margin-left: 12px;
 }
 
+.moviesCardButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  padding: 3px 0 0;
+}
+
+.moviesCardButton img {
+  width: 100%;
+  height: 100%;
+}
+
 @media (max-width: 1280px) {
   
   .moviesCardList {

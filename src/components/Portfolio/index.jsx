@@ -3,9 +3,18 @@ import { Section } from 'src/components/Section'
 import styles from './Portfolio.module.css'
 
 const projects = [
-  { name: 'Статичный сайт', href: '#' },
-  { name: 'Адаптивный сайт', href: '#' },
-  { name: 'Одностраничное приложение', href: '#' },
+  {
+    name: 'Статичный сайт',
+    href: 'https://sarafurmann.github.io/how-to-learn/',
+  },
+  {
+    name: 'Адаптивный сайт',
+    href: 'https://sarafurmann.github.io/russian-travel/',
+  },
+  {
+    name: 'Одностраничное приложение',
+    href: 'https://github.com/sarafurmann/mesto-react',
+  },
 ]
 
 export const Portfolio = () => {
@@ -14,12 +23,17 @@ export const Portfolio = () => {
       <h1 className={styles.portfolioTitle}>Портфолио</h1>
       <ul>
         {projects.map(({ name, href }) => (
-          <div key={name} className={styles.portfolioProject}>
-            <span className={styles.portfolioProjectName}>{name}</span>
-            <a className={styles.portfolioProjectLink} href={href}>
-              ↗
+          <li className={styles.portfolioProjectItem} key={name}>
+            <a
+              href={href}
+              target="_blank"
+              className={styles.portfolioProject}
+              rel="noreferrer"
+            >
+              <span className={styles.portfolioProjectName}>{name}</span>
+              <span className={styles.portfolioProjectIcon}>↗</span>
             </a>
-          </div>
+          </li>
         ))}
       </ul>
     </Section>

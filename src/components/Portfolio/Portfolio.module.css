@@ -15,9 +15,11 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  text-decoration: none;
+  color: #000;
 }
 
-.portfolioProject:not(:last-child) {
+.portfolioProjectItem:not(:last-child) {
   padding-bottom: 19px;
   border-bottom: 1px solid #E8E8E8;
   margin-bottom: 20px;
@@ -30,13 +32,11 @@
   letter-spacing: -1.2px;
 }
 
-.portfolioProjectLink {
-  color: #000;
+.portfolioProjectIcon {
   font-size: 30px;
   font-style: normal;
   font-weight: 400;
   letter-spacing: -1.2px;
-  text-decoration: none;
 }
 
 @media (max-width: 1280px) {

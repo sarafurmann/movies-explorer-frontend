@@ -16,6 +16,7 @@
 }
 
 .searchFormInputLabel {
+  width: 65%;
   height: 34px;
   display: flex;
   align-items: center;
@@ -27,6 +28,7 @@
 
 .searchFormInput {
   border: none;
+  flex-grow: 1;
 }
 
 .searchFormInput::placeholder {
@@ -36,9 +38,11 @@
   font-weight: 400;
 }
 
-.searchFormIcon {
+.searchFormButton {
   margin-left: auto;
   padding-right: 19px;
+  border: none;
+  background: none;
   border-right: 1px solid #CBCBCB;
   margin-right: 29px;
 }
@@ -94,7 +98,7 @@
     margin-top: 46px;
   }
 
-  .searchFormIcon {
+  .searchFormButton {
     padding-right: 0;
     border-right: none;
     margin-right: 0;

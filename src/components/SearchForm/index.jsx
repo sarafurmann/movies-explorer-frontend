@@ -19,13 +19,16 @@ export const SearchForm = ({ className }) => {
             placeholder="Фильм"
             className={styles.searchFormInput}
             type="text"
+            required
           />
         </label>
-        <img
-          className={styles.searchFormIcon}
-          src={search2}
-          alt="another search icon"
-        />
+        <button className={styles.searchFormButton}>
+          <img
+            className={styles.searchFormButtonIcon}
+            src={search2}
+            alt="another search icon"
+          />
+        </button>
         <div className={styles.searchFormDesktop}>
           <input
             className={styles.searchFormSwitchInput}

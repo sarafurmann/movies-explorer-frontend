@@ -18,7 +18,9 @@ export const MoviesCard = ({ name, duration, image, saved, picked }) => {
       <img className={styles.moviesCardImage} src={image} alt={name} />
       <div className={styles.moviesCardNameWrapper}>
         <h2 className={styles.moviesCardName}>{name}</h2>
-        <img src={moviesStatusIcon} alt="movie add status" />
+        <button className={styles.moviesCardButton} type="button">
+          <img src={moviesStatusIcon} alt="movie add status" />
+        </button>
       </div>
       <span className={styles.moviesCardDuration}>{duration}</span>
     </article>
