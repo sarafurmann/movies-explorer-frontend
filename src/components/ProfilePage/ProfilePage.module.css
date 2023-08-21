@@ -1,0 +1,92 @@
+.profilePage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 74px);
+  box-sizing: border-box;
+  padding: 74px 0 70px;
+}
+
+.profilePageTitle {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  margin-bottom: 123px;
+}
+
+.profilePageRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 410px;
+}
+
+.profilePageRow:first-of-type {
+  padding-bottom: 16px;
+  margin-bottom: 17px;
+  border-bottom: 1px solid #E8E8E8;
+}
+
+.profilePageField {
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.profilePageValue {
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.profilePageEditButton {
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  border: none;
+  background-color: transparent;
+  margin-top: auto;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+.profilePageExitButton {
+  color: #EE3465;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+@media (max-width: 1280px) {
+  .profilePageTitle {
+    margin-bottom: 96px;
+  }
+
+  .profilePage {
+    padding: 236px 0 269px;
+  }
+}
+
+@media (max-width: 768px) {
+  .profilePageTitle {
+    margin-bottom: 80px;
+  }
+
+  .profilePage {
+    padding: 70px 0 40px;
+  }
+
+  .profilePageEditButton {
+    font-size: 12px;
+  }
+
+  .profilePageExitButton {
+    font-size: 12px;
+  }
+}

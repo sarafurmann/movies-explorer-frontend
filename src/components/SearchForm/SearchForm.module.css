@@ -1,0 +1,106 @@
+.searchForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.searchFormContent {
+  width: 100%;
+  border-radius: 9px;
+  background: #fff;
+  box-shadow: 0px 3px 14px 0px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  padding: 16px 30px 16px 19px;
+}
+
+.searchFormInputLabel {
+  width: 65%;
+  height: 34px;
+  display: flex;
+  align-items: center;
+}
+
+.searchFormInputIcon {
+  margin-right: 10px;
+}
+
+.searchFormInput {
+  border: none;
+  flex-grow: 1;
+}
+
+.searchFormInput::placeholder {
+  color: #A0A0A0;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.searchFormButton {
+  margin-left: auto;
+  padding-right: 19px;
+  border: none;
+  background: none;
+  border-right: 1px solid #CBCBCB;
+  margin-right: 29px;
+}
+
+.searchFormSwitchOn, .searchFormSwitchOff {
+  margin-right: 14px;
+}
+
+.searchFormSwitchInput {
+  display: none;
+}
+
+.searchFormSwitchOn {
+  display: none;
+}
+
+.searchFormSwitchOff {
+  display: block;
+}
+
+.searchFormSwitchInput:checked + .searchFormSwitchLabel .searchFormSwitchOn {
+  display: block;
+}
+
+.searchFormSwitchInput:checked+.searchFormSwitchLabel .searchFormSwitchOff {
+  display: none;
+}
+
+.searchFormSwitchLabel {
+  height: 34px;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.searchFormDesktop {
+  display: block;
+}
+
+.searchFormMobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .searchFormDesktop {
+    display: none;
+  }
+  
+  .searchFormMobile {
+    display: block;
+    margin-top: 46px;
+  }
+
+  .searchFormButton {
+    padding-right: 0;
+    border-right: none;
+    margin-right: 0;
+  }
+}

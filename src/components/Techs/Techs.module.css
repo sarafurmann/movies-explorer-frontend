@@ -1,0 +1,77 @@
+.techs {
+  background-color: #F5F5F5;
+  padding: 100px 70px;
+}
+
+.techsContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.techsContentTitle {
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -2px;
+  margin: 90px 0 26px;
+}
+
+.techsContentDesc {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.56px;
+  margin: 0 0 100px;
+}
+
+.techsSkillsList {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 0;
+  gap: 10px;
+}
+
+.techsSkillsItem {
+  border-radius: 10px;
+  background: #E8E8E8;
+  width: 90px;
+  height: 60px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1280px) {
+  .techs {
+    padding: 90px 50px;
+  }
+
+  .techsSkillsItem {
+    width: 84px;
+    height: 57px;
+    font-size: 12px;
+  }
+
+  .techsContentDesc {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .techs {
+    padding: 70px 18px;
+  }
+
+  .techsContentTitle {
+    font-size: 30px;
+  }
+
+  .techsContentDesc {
+    font-size: 11px;
+  }
+}
