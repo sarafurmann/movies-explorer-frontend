@@ -1,3 +1,5 @@
+import { useContext } from 'react'
+import { CurrentUserContext } from 'src/contexts/CurrentUserContext'
 import clsx from 'clsx'
 import logo from 'src/images/logo.svg'
 import account from 'src/images/account.svg'
@@ -6,9 +8,11 @@ import hamburger from 'src/images/hamburger.svg'
 import styles from './Header.module.css'
 
 export const Header = ({ isMain }) => {
-  if (isMain) {
+  const { user } = useContext(CurrentUserContext)
+
+  if (!user) {
     return (
-      <header className={clsx(styles.header, styles.headerMain)}>
+      <header className={clsx(styles.header, isMain && styles.headerMain)}>
         <a href="/">
           <img src={logo} alt="Logo" />
         </a>
@@ -26,8 +30,10 @@ export const Header = ({ isMain }) => {
   }
 
   return (
-    <header className={styles.header}>
-      <img className={styles.headerLogo} src={logo} alt="Logo" />
+    <header className={clsx(styles.header, isMain && styles.headerMain)}>
+      <a href="/">
+        <img className={styles.headerLogo} src={logo} alt="Logo" />
+      </a>
       <a
         href="/movies"
         className={clsx(styles.headerNavLink, styles.headerNavLinkFilms)}

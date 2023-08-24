@@ -5,6 +5,12 @@
   color: #fff;
   width: 396px;
   height: 45px;
+  transition: 0.5s ease-out opacity;
+  cursor: pointer;
+}
+
+.button:hover {
+  opacity: 0.8;
 }
 
 @media (max-width: 768px) {

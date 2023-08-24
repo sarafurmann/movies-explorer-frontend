@@ -45,6 +45,7 @@
   background: none;
   border-right: 1px solid #CBCBCB;
   margin-right: 29px;
+  cursor: pointer;
 }
 
 .searchFormSwitchOn, .searchFormSwitchOff {

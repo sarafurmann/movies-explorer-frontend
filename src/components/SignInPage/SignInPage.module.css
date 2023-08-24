@@ -59,6 +59,15 @@
   text-decoration: none;
 }
 
+.signinError {
+  color: #FF004C;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
 
 @media (max-width: 1280px) {
   .signinPageInput:last-of-type {
@@ -89,5 +98,9 @@
 
   .signinPageExtraLink {
     font-size: 12px;
+  }
+
+  .signinError {
+    font-style: 12px;
   }
 }
