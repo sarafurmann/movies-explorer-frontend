@@ -3,7 +3,7 @@ import { Button } from 'src/components/Button'
 
 import styles from 'src/components/SignInPage/SignInPage.module.css'
 import logo from 'src/images/logo.svg'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { mainApi } from 'src/utils/MainApi'
 
 export const SignUpPage = () => {
@@ -11,6 +11,8 @@ export const SignUpPage = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState(null)
+  const [disabled, setDisabled] = useState(true)
+  const formRef = useRef(null)
 
   const onNameChange = (e) => {
     setName(e.target.value)
@@ -49,10 +51,20 @@ export const SignUpPage = () => {
     }
   }
 
+  useEffect(() => {
+    setDisabled(!formRef.current.checkValidity())
+  }, [email, password])
+
   return (
     <div className={styles.signinPage}>
-      <form onSubmit={onSubmit} className={styles.signinPageContainer}>
-        <img className={styles.signinPageLogo} src={logo} alt="Logo" />
+      <form
+        ref={formRef}
+        onSubmit={onSubmit}
+        className={styles.signinPageContainer}
+      >
+        <a href="/">
+          <img className={styles.signinPageLogo} src={logo} alt="Logo" />
+        </a>
         <h1 className={styles.signinPageTitle}>Добро пожаловать!</h1>
         <Input
           value={name}
@@ -78,7 +90,11 @@ export const SignUpPage = () => {
           required
         />
         {error ? <div className={styles.signinError}>{error}</div> : null}
-        <Button type="submit" className={styles.signinPageButton}>
+        <Button
+          disabled={disabled}
+          type="submit"
+          className={styles.signinPageButton}
+        >
           Зарегистрироваться
         </Button>
         <div className={styles.signinPageExtra}>

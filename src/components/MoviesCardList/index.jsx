@@ -23,6 +23,7 @@ export const MoviesCard = ({
   name,
   duration,
   image,
+  trailerLink,
   saved,
   picked,
   onLikeClick,
@@ -44,7 +45,9 @@ export const MoviesCard = ({
 
   return (
     <article className={styles.moviesCard}>
-      <img className={styles.moviesCardImage} src={image} alt={name} />
+      <a href={trailerLink} target="_blank" rel="noreferrer">
+        <img className={styles.moviesCardImage} src={image} alt={name} />
+      </a>
       <div className={styles.moviesCardNameWrapper}>
         <h2 className={styles.moviesCardName}>{name}</h2>
         <button
@@ -62,6 +65,10 @@ export const MoviesCard = ({
 }
 
 export const MoviesCardList = ({ cards, saved, likeMovie }) => {
+  if (cards.length === 0) {
+    return <h1>Ничего не найдено</h1>
+  }
+
   return (
     <ul className={styles.moviesCardList}>
       {cards.map(
@@ -86,6 +93,7 @@ export const MoviesCardList = ({ cards, saved, likeMovie }) => {
               duration={duration}
               image={image}
               picked={picked}
+              trailerLink={trailerLink}
               onLikeClick={() =>
                 likeMovie({
                   nameEN,

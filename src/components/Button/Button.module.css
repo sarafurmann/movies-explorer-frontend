@@ -1,6 +1,6 @@
 .button {
   border-radius: 3px;
-  background: #3456F3;
+  background-color: #3456F3;
   border: none;
   color: #fff;
   width: 396px;
@@ -11,6 +11,11 @@
 
 .button:hover {
   opacity: 0.8;
+}
+
+.button:disabled {
+  background-color: #F8F8F8;
+  color: #C2C2C2;
 }
 
 @media (max-width: 768px) {

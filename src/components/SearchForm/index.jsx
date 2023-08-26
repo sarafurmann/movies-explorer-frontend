@@ -22,6 +22,7 @@ export const SearchForm = ({
 
   const onShortOnlyChange = (e) => {
     setShortOnly(e.target.checked)
+    onChange({ searchValue, shortOnly: e.target.checked })
   }
 
   const onInvalidInput = (e) => {

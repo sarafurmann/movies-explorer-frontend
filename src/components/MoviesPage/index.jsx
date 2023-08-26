@@ -59,8 +59,8 @@ export const MoviesPage = ({ saved }) => {
   const [shortOnly, setShortOnly] = useState(
     JSON.parse(getLocalStorageItem('shortOnly', saved)) ?? false,
   )
-  const [limit, setLimit] = useState(getLocalStorageItem('limit', saved) ?? 16)
-  const [page, setPage] = useState(getLocalStorageItem('page', saved) ?? 1)
+  const [limit, setLimit] = useState(getLocalStorageItem('limit', saved) ?? 4)
+  const [rows, setRows] = useState(getLocalStorageItem('rows', saved) ?? 4)
   const { myMovies, setMyMovies } = useContext(CurrentUserContext)
   const myMoviesSet = new Set(myMovies?.map(({ movieId }) => movieId))
 
@@ -76,7 +76,7 @@ export const MoviesPage = ({ saved }) => {
     return nameRU.includes(value) || nameEN.includes(value)
   })
 
-  const resultMovies = filteredMovies.slice(0, page * limit).map((movie) => {
+  const resultMovies = filteredMovies.slice(0, rows * limit).map((movie) => {
     return {
       ...movie,
       picked: myMoviesSet.has?.(movie.movieId),
@@ -96,19 +96,22 @@ export const MoviesPage = ({ saved }) => {
       }, 500)
 
       if (window.innerWidth >= 1280) {
-        setLimit(16)
-        setLocalStorageItem('limit', 16, saved)
+        setLimit(4)
+        setRows(4)
+        setLocalStorageItem('limit', 4, saved)
         return
       }
 
       if (window.innerWidth >= 768) {
-        setLimit(8)
-        setLocalStorageItem('limit', 8, saved)
+        setLimit(2)
+        setRows(4)
+        setLocalStorageItem('limit', 2, saved)
         return
       }
 
-      setLimit(5)
-      setLocalStorageItem('limit', 5, saved)
+      setLimit(1)
+      setRows(5)
+      setLocalStorageItem('limit', 1, saved)
     }
 
     window.addEventListener('resize', onResize)
@@ -147,8 +150,9 @@ export const MoviesPage = ({ saved }) => {
   }
 
   const onMoreClick = () => {
-    setPage((prev) => prev + 1)
-    setLocalStorageItem('page', page + 1, saved)
+    const inc = limit === 1 ? 2 : 1
+    setRows((prev) => prev + inc)
+    setLocalStorageItem('rows', rows + inc, saved)
   }
 
   const likeMovie = async (data) => {
@@ -174,7 +178,7 @@ export const MoviesPage = ({ saved }) => {
             defaultShortOnly={shortOnly}
           />
         </div>
-        {['idle', 'loading'].includes(status) && !saved ? <Preloader /> : null}
+        {status === 'loading' ? <Preloader /> : null}
         {status === 'success' || saved ? (
           <MoviesCardList
             likeMovie={likeMovie}

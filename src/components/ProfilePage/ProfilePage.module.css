@@ -54,6 +54,11 @@
   cursor: pointer;
 }
 
+.profilePageEditButton:disabled {
+  cursor: unset;
+  color: #E8E8E8;
+}
+
 .profilePageExitButton {
   color: #EE3465;
   font-size: 13px;

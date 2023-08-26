@@ -60,14 +60,14 @@
   height: 100%;
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1250px) {
   .moviesCardList {
     row-gap: 36px;
     column-gap: 30px;
   }
 
   .moviesCardListItem {
-    width: 339px;
+    width: 339.5px;
   }
 
   .moviesCardImage {

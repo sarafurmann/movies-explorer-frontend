@@ -7,7 +7,7 @@ import { mainApi } from 'src/utils/MainApi'
 
 export const ProfilePage = () => {
   const { user } = useContext(CurrentUserContext)
-  const [disabled, setDisabled] = useState(false)
+  const [disabled, setDisabled] = useState(true)
   const [name, setName] = useState(user?.name)
   const [email, setEmail] = useState(user?.email)
 
@@ -20,18 +20,41 @@ export const ProfilePage = () => {
     setDisabled(true)
     await mainApi.editUser({ name, email })
     setDisabled(false)
+    alert('Данные пользователя успешно изменены!')
+  }
+
+  const onNameChange = (e) => {
+    const newName = e.target.value
+    setName(newName)
+
+    if (newName === user?.name && email === user?.email) {
+      setDisabled(true)
+    } else {
+      setDisabled(false)
+    }
+  }
+
+  const onEmailChange = (e) => {
+    const newEmail = e.target.value
+    setEmail(newEmail)
+
+    if (name === user?.name && newEmail === user?.email) {
+      setDisabled(true)
+    } else {
+      setDisabled(false)
+    }
   }
 
   return (
     <>
       <Header />
       <main className={styles.profilePage}>
-        <h1 className={styles.profilePageTitle}>Привет, Виталий!</h1>
+        <h1 className={styles.profilePageTitle}>Привет, {user?.name}!</h1>
         <div className={styles.profilePageRow}>
           <span className={styles.profilePageField}>Имя</span>
           <input
             className={styles.profilePageValue}
-            onChange={(e) => setName(e.target.value)}
+            onChange={onNameChange}
             value={name}
           />
         </div>
@@ -39,7 +62,7 @@ export const ProfilePage = () => {
           <span className={styles.profilePageField}>E-mail</span>
           <input
             className={styles.profilePageValue}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={onEmailChange}
             value={email}
           />
         </div>
