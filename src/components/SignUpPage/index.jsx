@@ -80,6 +80,7 @@ export const SignUpPage = () => {
           type="email"
           label="E-mail"
           required
+          pattern="^.+@.+\..+$"
         />
         <Input
           value={password}

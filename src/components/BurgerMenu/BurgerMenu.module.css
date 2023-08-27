@@ -1,0 +1,72 @@
+.burgerMenuWraper {
+  background-color: rgba(0, 0, 0, 0.3);
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.burgerMenuClose {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1;
+}
+
+.burgerMenu {
+  width: 70%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding-top: 160px;
+  padding-bottom: 90px;
+  gap: 28px;
+}
+
+.burgerMenuLink {
+  color: #000;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  text-decoration: none;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+}
+
+.burgerMenuLink:hover {
+  border-bottom: 2px solid #000;
+}
+
+.burgerMenuLinkAccount {
+  margin-top: auto;
+  color: #000;
+  width: 100px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 50px;
+  border: 2px solid rgba(170, 170, 170, 0.2);
+  background-color: transparent;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+@media (max-width: 480px) {
+  .burgerMenu {
+    width: 100%;
+    padding-top: 140px;
+    padding-bottom: 45px;
+  }
+}

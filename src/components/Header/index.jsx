@@ -1,5 +1,6 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { CurrentUserContext } from 'src/contexts/CurrentUserContext'
+import { BurgerMenu } from 'src/components/BurgerMenu'
 import clsx from 'clsx'
 import logo from 'src/images/logo.svg'
 import account from 'src/images/account.svg'
@@ -9,6 +10,7 @@ import styles from './Header.module.css'
 
 export const Header = ({ isMain }) => {
   const { user } = useContext(CurrentUserContext)
+  const [isOpen, setIsOpen] = useState(false)
 
   if (!user) {
     return (
@@ -47,7 +49,13 @@ export const Header = ({ isMain }) => {
         <img src={account} alt="account" />
         Аккаунт
       </a>
-      <img className={styles.headerHambergerMenu} src={hamburger} alt="Menu" />
+      <img
+        onClick={() => setIsOpen(true)}
+        className={styles.headerHambergerMenu}
+        src={hamburger}
+        alt="Menu"
+      />
+      {isOpen ? <BurgerMenu onClose={() => setIsOpen(false)} /> : null}
     </header>
   )
 }

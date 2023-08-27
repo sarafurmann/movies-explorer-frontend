@@ -1,4 +1,4 @@
-import { useContext, useEffect, useMemo, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { Header } from 'src/components/Header'
 import { Footer } from 'src/components/Footer'
 import { MoviesCardList } from 'src/components/MoviesCardList'
@@ -66,7 +66,6 @@ export const MoviesPage = ({ saved }) => {
 
   const filteredMovies = (saved ? myMovies : movies).filter((movie) => {
     if (shortOnly && movie.duration > 40) {
-      console.log('shortOnly', shortOnly)
       return false
     }
 
@@ -93,16 +92,23 @@ export const MoviesPage = ({ saved }) => {
       locked = true
       setTimeout(() => {
         locked = false
-      }, 500)
+      }, 200)
 
-      if (window.innerWidth > 768) {
+      if (window.innerWidth > 1199) {
         setLimit(4)
         setRows(4)
         setLocalStorageItem('limit', 4, saved)
         return
       }
 
-      if (window.innerWidth >= 480) {
+      if (window.innerWidth > 909) {
+        setLimit(3)
+        setRows(4)
+        setLocalStorageItem('limit', 4, saved)
+        return
+      }
+
+      if (window.innerWidth > 649) {
         setLimit(2)
         setRows(4)
         setLocalStorageItem('limit', 2, saved)
