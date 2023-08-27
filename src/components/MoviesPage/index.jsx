@@ -95,14 +95,14 @@ export const MoviesPage = ({ saved }) => {
         locked = false
       }, 500)
 
-      if (window.innerWidth >= 1280) {
+      if (window.innerWidth > 768) {
         setLimit(4)
         setRows(4)
         setLocalStorageItem('limit', 4, saved)
         return
       }
 
-      if (window.innerWidth >= 768) {
+      if (window.innerWidth >= 480) {
         setLimit(2)
         setRows(4)
         setLocalStorageItem('limit', 2, saved)

@@ -32,3 +32,9 @@
     padding: 70px 30px 80px;
   }
 }
+
+@media (max-width: 768px) {
+  .moviesPage {
+    padding: 70px 10px 80px;
+  }
+}

@@ -9,6 +9,7 @@ export const Input = ({
   required = false,
   value,
   onChange,
+  pattern,
 }) => {
   return (
     <label className={clsx(styles.label, className)}>
@@ -19,6 +20,7 @@ export const Input = ({
         className={styles.input}
         type={type}
         required={required}
+        pattern={pattern}
       />
     </label>
   )
