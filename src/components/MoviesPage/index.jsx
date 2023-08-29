@@ -83,17 +83,7 @@ export const MoviesPage = ({ saved }) => {
   })
 
   useEffect(() => {
-    let locked = false
     const onResize = () => {
-      if (locked) {
-        return
-      }
-
-      locked = true
-      setTimeout(() => {
-        locked = false
-      }, 200)
-
       if (window.innerWidth > 1199) {
         setLimit(4)
         setRows(4)
