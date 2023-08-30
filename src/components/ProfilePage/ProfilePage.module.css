@@ -40,6 +40,7 @@
   font-size: 11px;
   font-style: normal;
   font-weight: 400;
+  border: none;
 }
 
 .profilePageEditButton {
@@ -51,6 +52,11 @@
   margin-top: auto;
   margin-bottom: 16px;
   cursor: pointer;
+}
+
+.profilePageEditButton:disabled {
+  cursor: unset;
+  color: #E8E8E8;
 }
 
 .profilePageExitButton {

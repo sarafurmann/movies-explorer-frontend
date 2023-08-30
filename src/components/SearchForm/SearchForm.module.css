@@ -13,6 +13,7 @@
   display: flex;
   align-items: center;
   padding: 16px 30px 16px 19px;
+  box-sizing: border-box;
 }
 
 .searchFormInputLabel {
@@ -45,6 +46,7 @@
   background: none;
   border-right: 1px solid #CBCBCB;
   margin-right: 29px;
+  cursor: pointer;
 }
 
 .searchFormSwitchOn, .searchFormSwitchOff {
@@ -92,7 +94,7 @@
   .searchFormDesktop {
     display: none;
   }
-  
+
   .searchFormMobile {
     display: block;
     margin-top: 46px;

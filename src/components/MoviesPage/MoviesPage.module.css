@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  flex-grow: 1;
 }
 
 .moviesPageSearchForm {
@@ -25,4 +25,16 @@
   justify-content: center;
   align-items: center;
   margin-top: 60px;
+}
+
+@media (max-width: 1280px) {
+  .moviesPage {
+    padding: 70px 30px 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .moviesPage {
+    padding: 70px 10px 80px;
+  }
 }

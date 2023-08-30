@@ -5,6 +5,7 @@
   flex-wrap: wrap;
   row-gap: 32px;
   column-gap: 20px;
+  max-width: 1500px;
 }
 
 .moviesCardListItem {
@@ -21,6 +22,7 @@
 
 .moviesCardImage {
   width: 100%;
+  height: 151px;
   margin-bottom: 14px;
 }
 
@@ -59,24 +61,32 @@
   height: 100%;
 }
 
-@media (max-width: 1280px) {
-  
+@media (max-width: 768px) {
   .moviesCardList {
     row-gap: 36px;
     column-gap: 30px;
   }
 
   .moviesCardListItem {
-    width: 339px;
+    width: calc(50% - 15px);
+    min-width: 300px;
+  }
+
+  .moviesCardImage {
+    height: 190px;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .moviesCardList {
     row-gap: 30px;
   }
 
   .moviesCardListItem {
     max-width: 90%;
+  }
+
+  .moviesCardImage {
+    height: 168px;
   }
 }
