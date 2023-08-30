@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react'
+import { useCallback, useContext, useEffect, useState } from 'react'
 import { Header } from 'src/components/Header'
 import { Footer } from 'src/components/Footer'
 import { MoviesCardList } from 'src/components/MoviesCardList'
@@ -82,41 +82,48 @@ export const MoviesPage = ({ saved }) => {
     }
   })
 
-  useEffect(() => {
-    const onResize = () => {
-      if (window.innerWidth > 1199) {
-        setLimit(4)
-        setRows(4)
-        setLocalStorageItem('limit', 4, saved)
-        return
-      }
-
-      if (window.innerWidth > 909) {
-        setLimit(3)
-        setRows(4)
-        setLocalStorageItem('limit', 4, saved)
-        return
-      }
-
-      if (window.innerWidth > 649) {
-        setLimit(2)
-        setRows(4)
-        setLocalStorageItem('limit', 2, saved)
-        return
-      }
-
-      setLimit(1)
-      setRows(5)
-      setLocalStorageItem('limit', 1, saved)
+  const onResize = useCallback(() => {
+    if (window.innerWidth > 1569) {
+      setLimit(5)
+      setRows(4)
+      setLocalStorageItem('limit', 4, saved)
+      return
     }
 
+    if (window.innerWidth > 1199) {
+      setLimit(4)
+      setRows(4)
+      setLocalStorageItem('limit', 4, saved)
+      return
+    }
+
+    if (window.innerWidth > 909) {
+      setLimit(3)
+      setRows(4)
+      setLocalStorageItem('limit', 4, saved)
+      return
+    }
+
+    if (window.innerWidth > 649) {
+      setLimit(2)
+      setRows(4)
+      setLocalStorageItem('limit', 2, saved)
+      return
+    }
+
+    setLimit(1)
+    setRows(5)
+    setLocalStorageItem('limit', 1, saved)
+  }, [saved])
+
+  useEffect(() => {
     window.addEventListener('resize', onResize)
     onResize()
 
     return () => {
       window.removeEventListener('resize', onResize)
     }
-  }, [saved])
+  }, [onResize])
 
   const onSearchValueChange = ({ searchValue, shortOnly }) => {
     if (saved) {
@@ -126,6 +133,7 @@ export const MoviesPage = ({ saved }) => {
       setLocalStorageItem('shortOnly', shortOnly, saved)
       setStatus('success')
       setLocalStorageItem('status', 'success', saved)
+      onResize()
     } else {
       setStatus('loading')
       moviesApi
@@ -140,6 +148,7 @@ export const MoviesPage = ({ saved }) => {
           setLocalStorageItem('shortOnly', shortOnly, saved)
           setStatus('success')
           setLocalStorageItem('status', 'success', saved)
+          onResize()
         })
         .catch(() => setStatus('error'))
     }
